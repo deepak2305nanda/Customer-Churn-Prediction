@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import sys
 from pathlib import Path
 
 import joblib
@@ -7,13 +8,16 @@ import numpy as np
 import pandas as pd
 import streamlit as st
 
-from src.profit.targeting import ProfitParams, best_threshold, expected_profit_per_customer, implied_targeting_rule
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+
+from src.profit.targeting import ProfitParams, best_threshold, expected_profit_per_customer, implied_targeting_rule  # noqa: E402
 
 
 @st.cache_resource
 def load_model():
-    project_root = Path(__file__).resolve().parents[1]
-    model_path = project_root / "models" / "churn_model.joblib"
+    model_path = PROJECT_ROOT / "models" / "churn_model.joblib"
     return joblib.load(model_path)
 
 
@@ -44,8 +48,7 @@ def main() -> None:
     st.subheader("1) Upload data")
     uploaded = st.file_uploader("CSV with same columns as training data", type=["csv"])
 
-    project_root = Path(__file__).resolve().parents[1]
-    sample_path = project_root / "data" / "raw" / "telco_churn.csv"
+    sample_path = PROJECT_ROOT / "data" / "raw" / "telco_churn.csv"
     if sample_path.exists():
         st.caption("Tip: you can test using the downloaded sample dataset.")
 
