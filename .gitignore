@@ -1,4 +1,4 @@
-# Python / env
+# Python
 __pycache__/
 *.py[cod]
 *.egg-info/
@@ -11,11 +11,15 @@ __pycache__/
 # Jupyter
 .ipynb_checkpoints/
 
-# Data artifacts
+# Data (keep code + small sample data only)
 data/raw/
 data/processed/
+data/external/
 !data/**/.gitkeep
 
-# App secrets
+# Reports (keep figures, but ignore heavy artifacts if needed)
+reports/**/*.html
+
+# Secrets
 .env
 
