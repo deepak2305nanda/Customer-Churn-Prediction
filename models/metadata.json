@@ -1,0 +1,8 @@
+{
+  "target": "Churn",
+  "n_rows": 7043,
+  "n_features": 19,
+  "test_size": 0.2,
+  "random_state": 42,
+  "note": "CalibratedClassifierCV(LogisticRegression(class_weight=balanced))"
+}

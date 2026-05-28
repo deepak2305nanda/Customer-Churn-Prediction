@@ -1,0 +1,6 @@
+{
+  "threshold": 0.17,
+  "n_targeted": 752,
+  "expected_profit_total": 63190.640715630565,
+  "expected_profit_per_customer": 44.847864241043695
+}
