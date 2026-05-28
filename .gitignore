@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+.DS_Store
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Data (keep code + small sample data only)
+data/raw/
+data/processed/
+data/external/
+!data/**/.gitkeep
+
+# Reports (keep figures, but ignore heavy artifacts if needed)
+reports/**/*.html
+
+# Secrets
+.env
+
